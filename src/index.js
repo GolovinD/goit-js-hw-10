@@ -40,15 +40,22 @@ function onFormInput(evt) {
 }
  
 function createMarkupOneCountry (data) {
-        let country = data.map(item => `
+    let country = data.map(item => `<div class="country-item">
         <img class="country-flag" src="${item.flags.svg}" alt="${name} flag" width="100"/>
         <h2 class="country-name">${item.name.official}</h2>
+        </div>
+        <div class="country-item">
         <h3 class="country-data-title">Capital:</h3>
         <p class="country-data">${item.capital}</p>
+        </div>
+        <div class="country-item">
         <h3 class="country-data-title">Population:</h3>
         <p class="country-data">${item.population}</p>
+        </div>
+        <div class="country-item">
         <h3 class="country-data-title">Languages:</h3>
-        <p class="country-data">${Object.values(item.languages).join(', ')}</p>`
+        <p class="country-data">${Object.values(item.languages).join(', ')}</p>
+        </div>`
         ).join('')
         countryInfoRef.insertAdjacentHTML('beforeend', country);
     }

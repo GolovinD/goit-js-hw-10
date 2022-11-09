@@ -30,12 +30,16 @@ body {
 }
 
 .country-item {
-  list-style: none;
   display: flex;
-  flex-direction: row;
+  align-items: center;
+  gap: 20px;
 }
 
 .country-name {
+}
+
+.country-data-title {
+  width: 120px;
 }
 
 .country-info {
