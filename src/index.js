@@ -20,6 +20,10 @@ inputRef.addEventListener('input', debounce(onFormInput, DEBOUNCE_DELAY));
 function onFormInput(evt) {
     cleanupMarkupHTML()
     const inputCountrie = `${evt.target.value}`.trim();
+     if (!evt.target.value) {
+            console.log('return')
+            return
+        }  
     fetchCountries(inputCountrie)
     .then(data => {
 
@@ -30,7 +34,7 @@ function onFormInput(evt) {
         else if (data.length === 1) {
         createMarkupOneCountry(data);
         }
-            
+                   
         else { 
         createMarkupSeveralCountry(data);
         }  
